@@ -1,5 +1,7 @@
 # rtl-web-support-exercise
 
+A barebones vue app for RTL-support exercises.
+
 ## Project setup
 ```
 npm install
