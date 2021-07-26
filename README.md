@@ -14,7 +14,8 @@ npm run serve
 1. Word in RTL: `שלום`
 2. Another word in RTL: `וברכה`
 3. Sentence with single-quotes (try to add slash) `משפט עם צ'ופצ'יקים`
-4. Example mixed sentence `הכל OK`
+4. Sentence with double-quotes (try to add slash) `זה ממש בלת"ם`
+5. Example mixed sentence `הכל OK`
 
 ## Vuejs tools
 ### Compiles and minifies for production
