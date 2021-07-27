@@ -2,15 +2,21 @@
   <form action="#" class="form-addentry" ref="form">
     <h2>{{ $i18n('add_entry') }}</h2>
     <div>
-      <label for="name">Name:</label>
+      <label for="name">{{ $i18n('form_name') }}</label>
       <input type="text" name="name" />
     </div>
     <div>
-      <label for="name">Email:</label>
+      <input type="radio" id="handedness_left" name="handedness" :value="$i18n('form_hand_left')">
+      <label for="handedness_left">{{ $i18n('form_hand_left') }}</label>
+      <input type="radio" id="handedness_right" name="handedness" :value="$i18n('form_hand_right')">
+      <label for="handedness_right">{{ $i18n('form_hand_right') }}</label>
+    </div>
+    <div>
+      <label for="email">{{ $i18n('form_email') }}</label>
       <input type="text" name="email" />
     </div>
     <div>
-      <label for="message">Message:</label>
+      <label for="message">{{ $i18n('form_message') }}</label>
       <textarea name="message" />
     </div>
     <v-btn

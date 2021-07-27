@@ -9,6 +9,7 @@
     >
       <div class="entry-name">{{ entry.name }}</div>
       <div class="entry-email">{{ entry.email }}</div>
+      <div class="entry-handedness">{{ entry.handedness }}</div>
       <div class="entry-message">{{ entry.message }}</div>
     </div>
   </div>
