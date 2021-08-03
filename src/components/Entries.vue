@@ -4,7 +4,7 @@
 
     <div
       class="entry"
-      v-for="(entry, index) in entries"
+      v-for="(entry, index) in getEntries"
       :key="index"
     >
       <div class="entry-name">{{ entry.name }}</div>
@@ -16,13 +16,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Entries',
   data: () => ({
   }),
   computed: {
-    entries () {
-      return this.$store.state.entries
+    ...mapGetters({
+      getSiteLang: 'getSiteLang',
+      getEntries: 'getEntries'
+    })
+  },
+  watch: {
+    getSiteLang (value) {
+      this.i18n.locale = value
     }
   }
 }

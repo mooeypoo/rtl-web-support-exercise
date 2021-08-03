@@ -10,6 +10,7 @@
 import Header from './components/Header';
 import AddEntryForm from './components/AddEntryForm';
 import Entries from './components/Entries';
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -20,7 +21,17 @@ export default {
   },
   data: () => ({
     //
-  })
+  }),
+  computed: {
+    ...mapGetters({
+      getSiteLang: 'getSiteLang'
+    })
+  },
+  watch: {
+    getSiteLang (value) {
+      this.i18n.locale = value
+    }
+  }
 };
 </script>
 

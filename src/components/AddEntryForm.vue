@@ -29,10 +29,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'AddEntryForm',
   methods: {
     addEntry (e) {
+      // Serialize form data by input name => value
       const formData = new FormData(document.querySelector('form'))
       const obj = {};
       for (var key of formData.keys()) {
@@ -45,7 +47,18 @@ export default {
         return
       }
 
+      // Add to store
       this.$store.commit('addEntry', obj)
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getSiteLang: 'getSiteLang'
+    })
+  },
+  watch: {
+    getSiteLang (value) {
+      this.i18n.locale = value
     }
   }
 }

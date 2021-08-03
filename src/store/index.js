@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    sitelang: 'en',
     sitedir: 'ltr',
     entries: []
   },
@@ -12,11 +13,19 @@ export default new Vuex.Store({
     changeSiteDir (state, dir) {
       state.sitedir = dir
     },
-    changeLang (state, lang) {
+    changeSiteLang (state, lang) {
       state.sitelang = lang
     },
     addEntry (state, entryOptions) {
       state.entries.push(entryOptions)
+    }
+  },
+  getters: {
+    getSiteLang: (state) => {
+      return state.sitelang
+    },
+    getEntries: (state) => {
+      return state.entries
     }
   },
   actions: {

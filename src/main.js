@@ -4,12 +4,13 @@ import store from './store'
 import i18n from 'vue-banana-i18n'
 import vuetify from './plugins/vuetify'
 
-const INTERFACE_LANG = 'he'
+const INTERFACE_LANG = 'en'
 const messages = {
   en: {
     app_title: 'Learning With Jason: RTL Support',
     add_entry: 'Add entry',
     entries: 'Entries',
+    language: 'Language:',
     form_name: 'Name:',
     form_email: 'Email:',
     form_hand_left: '← Left handed',
@@ -21,6 +22,7 @@ const messages = {
     app_title: 'ללמוד עם ג\'ייסון: תמיכה בימין לשמאל',
     add_entry: 'הוספת רשומה',
     entries: 'רשומות',
+    language: 'שפה:',
     form_name: 'שם:',
     form_email: 'אימייל:',
     form_hand_left: '← שמאלי',

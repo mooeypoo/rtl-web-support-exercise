@@ -1,30 +1,37 @@
 <template>
   <div class="header">
     <Logo />
-    <div class="switch-direction">
-      <v-btn-toggle
-        v-model="siteDir"
-        mandatory
-      >
-        <v-btn value="ltr">
-          LTR
-        </v-btn>
+    <div class="settings">
+      <div class="switch-direction">
+        <v-btn-toggle
+          v-model="siteDir"
+          mandatory
+        >
+          <v-btn value="ltr">
+            LTR
+          </v-btn>
 
-        <v-btn value="rtl">
-          RTL
-        </v-btn>
-      </v-btn-toggle>
+          <v-btn value="rtl">
+            RTL
+          </v-btn>
+        </v-btn-toggle>
+      </div>
+      <div class="switch-lang">
+        <LangSelector @changeLang="onChangeLang" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from './Logo';
+import LangSelector from './LangSelector';
 
 export default {
   name: 'Header',
   components: {
-    Logo
+    Logo,
+    LangSelector
   },
   computed: {
     siteDir: {
@@ -35,8 +42,20 @@ export default {
         this.$store.commit('changeSiteDir', value)
       }
     },
+    siteLang: {
+      get () {
+        return this.$store.state.sitelang
+      },
+      set (value) {
+        this.$store.commit('changeSiteLang', value)
+      }
+    },
   },
   methods: {
+    onChangeLang (lang) {
+      this.$store.commit('changeSiteLang', lang)
+      this.i18n.locale = lang
+    }
   },
   watch: {
     siteDir (value) {
@@ -57,6 +76,18 @@ export default {
 
   .logo {
     flex-grow: 1;
+  }
+
+  .settings {
+    [dir="rtl"] & {
+      border-right: 5px solid darkred;
+      padding-right: 10px;
+    }
+
+    [dir="ltr"] & {
+      border-left: 5px solid darkred;
+      padding-left: 10px;
+    }
   }
 }
 </style>
