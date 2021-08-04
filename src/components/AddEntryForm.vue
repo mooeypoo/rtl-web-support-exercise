@@ -13,7 +13,7 @@
     </div>
     <div>
       <label for="email">{{ $i18n('form_email') }}</label>
-      <input type="text" name="email" />
+      <input type="email" name="email" />
     </div>
     <div>
       <label for="message">{{ $i18n('form_message') }}</label>
@@ -78,9 +78,15 @@ export default {
   }
 
   textarea,
-  input:not([type="submit"]) {
+  input:not([type="submit"]):not([type="radio"]) {
     vertical-align: top;
     border: 1px solid black;
+    width: 350px;
+  }
+
+  textarea {
+    min-height: 150px;
+    padding: 5px;
   }
 }
 </style>
