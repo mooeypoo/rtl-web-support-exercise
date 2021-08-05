@@ -1,8 +1,12 @@
 <template>
   <v-app>
     <Header />
-    <AddEntryForm />
-    <Entries />
+    <v-row justify="center">
+      <v-col cols="9">
+        <AddEntryForm />
+        <Entries />
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 

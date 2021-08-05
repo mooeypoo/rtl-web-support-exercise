@@ -90,7 +90,7 @@ export default {
   input:not([type="submit"]):not([type="radio"]) {
     vertical-align: top;
     border: 1px solid black;
-    width: 350px;
+    width: 100%;
   }
 
   textarea {
