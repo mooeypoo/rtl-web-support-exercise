@@ -5,11 +5,15 @@
       <label for="name">{{ $i18n('form_name') }}</label>
       <input type="text" name="name" />
     </div>
-    <div>
-      <input type="radio" id="handedness_left" name="handedness" :value="$i18n('form_hand_left')">
-      <label for="handedness_left">{{ $i18n('form_hand_left') }}</label>
-      <input type="radio" id="handedness_right" name="handedness" :value="$i18n('form_hand_right')">
-      <label for="handedness_right">{{ $i18n('form_hand_right') }}</label>
+    <div class="handedness">
+      <div>
+        <input type="radio" id="handedness_left" name="handedness" :value="$i18n('form_hand_left')">
+        <label for="handedness_left">{{ $i18n('form_hand_left') }}</label>
+      </div>
+      <div>
+        <input type="radio" id="handedness_right" name="handedness" :value="$i18n('form_hand_right')">
+        <label for="handedness_right">{{ $i18n('form_hand_right') }}</label>
+      </div>
     </div>
     <div>
       <label for="email">{{ $i18n('form_email') }}</label>
@@ -75,6 +79,11 @@ export default {
     label {
       margin-right: 15px;
     }
+  }
+
+  .handedness {
+    display: flex;
+    justify-content: space-between;
   }
 
   textarea,

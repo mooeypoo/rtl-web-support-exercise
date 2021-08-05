@@ -13,8 +13,8 @@ const messages = {
     language: 'Language:',
     form_name: 'Name:',
     form_email: 'Email:',
-    form_hand_left: '← Left handed',
-    form_hand_right: 'Right handed →',
+    form_hand_left: '← Left handed!',
+    form_hand_right: 'Right handed! →',
     form_message: 'Message:',
     form_website: 'Website:'
   },
@@ -25,8 +25,8 @@ const messages = {
     language: 'שפה:',
     form_name: 'שם:',
     form_email: 'אימייל:',
-    form_hand_left: '← שמאלי',
-    form_hand_right: 'ימני →',
+    form_hand_left: '← !שמאלי',
+    form_hand_right: 'ימני! →',
     form_message: 'הודעה:',
     form_website: 'אתר:'
   }
